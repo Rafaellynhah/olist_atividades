@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<body>
+<h1> Marketplace - Categoria </h1>
+
+<table>
+        <tr>
+            <th>Marketplace</th>
+            <th>Categoria</th>
+        </tr>
+        {% for var in list %}
+        <tr> 
+            <td>{{var[0]}}</td>
+            <td>{{var[1][0]}}</td>
+        </tr>
+        {% endfor %}
+</table>
+
+</body>
+</html>
