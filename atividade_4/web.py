@@ -1,7 +1,9 @@
 from flask import Flask, render_template
+from marketplace import Marketplace
 
 
 class Main:
+    
     
     app = Flask(__name__)
     
@@ -11,12 +13,20 @@ class Main:
     
     @app.route('/marketplaces')
     def list_marketplaces():
-        marketplaces = ['Americanas', 'Submarino', 'Casas Bahia', 'PontoFrio']
-        return render_template('markeplaces.html', list=marketplaces)   
+        m = Marketplace()
+        lista = m.list_marketplaces()
+        return render_template('marketplaces.html', list=lista)   
     
     @app.route('/categorias')
     def list_marketplaces_categorias():
-        marketplaces_categorias = [['Americanas', ['Eletronico', ['Celulares', 'Tvs']]]]
-        return render_template('categorias.html', list=marketplaces_categorias)      
+        m = Marketplace()
+        lista = m.list_marketplaces()
+        return render_template('categorias.html', list=lista)      
+    
+    @app.route('/subcategorias')
+    def list_categoria_subcategorias():
+        m = Marketplace()
+        lista = m.list_marketplaces()
+        return render_template('subcategorias.html', list=lista)    
          
-    app.run()    
+    app.run(debug=True)    

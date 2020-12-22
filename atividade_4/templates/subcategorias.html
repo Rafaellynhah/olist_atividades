@@ -1,15 +1,17 @@
 <!DOCTYPE html>
 <html>
 <body>
-<h1> Marketplaces </h1>
+<h1> Marketplace - Categoria </h1>
 
 <table>
         <tr>
-            <th>Nome</th>
+            <th>Categoria</th>
+            <th>SubCategorias</th>
         </tr>
         {% for var in list %}
         <tr> 
-            <td>{{var['Marketplace']}}</td>
+            <td>{{var['Categoria']}}</td>
+            <td>{{var['Subcategoria']}}</td>
         </tr>
         {% endfor %}
 </table>
