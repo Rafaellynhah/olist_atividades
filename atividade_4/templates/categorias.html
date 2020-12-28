@@ -1,7 +1,6 @@
-<!DOCTYPE html>
-<html>
-<body>
-<h1> Marketplace - Categoria </h1>
+{% extends 'base.html' %}
+{% block title %} Marketplace - Categoria {% endblock %}
+{% block body %}
 
 <table>
         <tr>
@@ -10,13 +9,13 @@
         </tr>
         {% for var in list %}
         <tr> 
-            <td>{{var['Marketplace']}}</td>
-            <td>{{var['Categoria']}}</td>
+            <td>{{var[0]}}</td>
+            <td>{{var[1]}}</td>
         </tr>
         {% endfor %}
 </table>
+
 </br>
 <a href='/'> Voltar </a>
 
-</body>
-</html>
+{% endblock %}

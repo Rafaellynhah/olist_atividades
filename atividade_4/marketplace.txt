@@ -1,0 +1,3 @@
+Americanas;Eletronicos;Celulares, Tvs
+Submarino;Moveis;Sofá, Cama
+Casas Bahia;Limpeza;Piso, Vidro

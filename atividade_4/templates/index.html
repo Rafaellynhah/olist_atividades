@@ -1,13 +1,9 @@
-<!DOCTYPE html>
-<html>
-<body>
-<h1> Menu </h1>
-
-    <ol> 
+{% extends 'base.html' %}
+{% block title %} Menu {% endblock %}
+{% block body %}
+    <ol>
         <li><a href='/marketplaces'>Lista Marketplaces</a></li>
         <li><a href='/categorias'>Lista Marketplace - Categoria</a></li>
         <li><a href='/subcategorias'>Lista Categoria - Subcategorias</a></li>
     </ol>
-
-</body>
-</html>
+{% endblock %}
