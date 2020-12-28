@@ -1,4 +1,10 @@
+import logging
+
+
 class Marketplace:
+    
+    
+    logging.basicConfig(filename='log', level=logging.DEBUG, format='%(asctime)s %(levelname)s %(funcName)s')
     
     
     # def list_marketplaces(self):
@@ -33,16 +39,19 @@ class Marketplace:
         return list_arq                   
             
     def listar_marketplaces(self):
+        logging.debug('')
         mkt = self.ler_arquivo()
         for l in mkt:
             print(f'Marketplace: {l[0]}')
      
     def listar_marketplace_categoria(self):
+        logging.debug('')
         mkt = self.ler_arquivo()
         for l in mkt:
             print(f'Marketplace: {l[0]}, Categoria: {l[1]}')
                         
     def listar_categoria_subcategorias(self):
+        logging.debug('')
         mkt = self.ler_arquivo()
         for l in mkt:
             print(f'Categoria: {l[1]}, Subcategoria: {l[2]}')
