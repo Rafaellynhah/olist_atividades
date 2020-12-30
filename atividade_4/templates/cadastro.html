@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% block title %} Cadastrar Marketplace {% endblock %}
+{% block body %}
+
+<div>
+  <form action="/cadastro">
+    <label >Nome: </label>
+    <input type="text" name="nome_mkt" placeholder="Nome Marketplace">
+    <input type="submit" value="Salvar">
+  </form>
+</div>
+
+</br>
+<a href='/'> Voltar </a>
+
+{% endblock %}

@@ -1,10 +1,7 @@
-import logging
+from datetime import datetime
 
 
 class Marketplace:
-    
-    
-    logging.basicConfig(filename='log', level=logging.DEBUG, format='%(asctime)s %(levelname)s %(funcName)s')
     
     
     # def list_marketplaces(self):
@@ -32,27 +29,38 @@ class Marketplace:
         list_arq = []
         arq = open('marketplace.txt', 'r')
         for l in arq:
-            linha = l.strip()
-            linha = linha.split(';') 
+            linha = l.split(';') 
             list_arq.append(linha)
         arq.close()
-        return list_arq                   
+        return list_arq   
+    
+    def salvar_mkt_arq(self, nome:str):
+        arq = open('marketplace.txt', 'a')
+        arq.write(f'{nome}\n')
+        arq.close()
+        
+    def salvar_log(self, nome:str):
+        data = datetime.today().strftime('%H:%M:%S - %d/%m/%Y')    
+        arq = open('log.txt', 'a')
+        arq.write(f'{data} - {nome}\n')
+        arq.close()              
             
     def listar_marketplaces(self):
-        logging.debug('')
+        self.salvar_log('listar_marketplaces')
         mkt = self.ler_arquivo()
         for l in mkt:
             print(f'Marketplace: {l[0]}')
      
     def listar_marketplace_categoria(self):
-        logging.debug('')
+        self.salvar_log('listar_marketplace_categoria')
         mkt = self.ler_arquivo()
         for l in mkt:
             print(f'Marketplace: {l[0]}, Categoria: {l[1]}')
                         
     def listar_categoria_subcategorias(self):
-        logging.debug('')
+        self.salvar_log('listar_categoria_subcategorias')
         mkt = self.ler_arquivo()
         for l in mkt:
             print(f'Categoria: {l[1]}, Subcategoria: {l[2]}')
+                
                             

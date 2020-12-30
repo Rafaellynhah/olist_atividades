@@ -1,0 +1,6 @@
+15:52:14 - 30/12/2020 - list_categoria_subcategorias
+15:54:15 - 30/12/2020 - list_marketplaces
+15:54:17 - 30/12/2020 - cadastrar_mkt
+15:54:21 - 30/12/2020 - cadastrar_mkt
+15:54:23 - 30/12/2020 - list_marketplaces
+15:54:38 - 30/12/2020 - cadastrar_mkt
