@@ -32,10 +32,10 @@ class TestCategoryDao:
         category.name = 'NewCategory'
         category.description = 'NewDescription'
 
-        dao.save(new_category)
-        assert new_category.description is category.description
-        assert new_category.name is category.name
-        dao.delete(new_category)
+        updated_category = dao.save(new_category)
+        assert updated_category.description is category.description
+        assert updated_category.name is category.name
+        dao.delete(updated_category)
     
     def test_delete_category(self, create_instance):
         dao = CategoryDao()
@@ -48,7 +48,7 @@ class TestCategoryDao:
     def test_read_by_id(self, create_instance):
         dao = CategoryDao()
         category = create_instance
-        new_category = dao.save(create_instance)
+        new_category = dao.save(category)
 
         assert isinstance(new_category, Category)
         assert category.id is not None
