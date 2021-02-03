@@ -2,40 +2,29 @@ import sys
 sys.path.append('.')
 
 from src.models.category import Category
+import pytest
 
-
-def test_name_none():
-    try:
-        c = Category(None, 'Bebida')
-    except Exception as e:
-        assert isinstance(e, TypeError)    
         
 def test_name_empty():
-    try:
-        c = Category('', 'Bebida')
-    except Exception as e:
-        assert isinstance(e, ValueError)  
+    with pytest.raises(ValueError):
+        categories = Category("", "Description")  
+
        
 def test_name_len():
-    try:
-        c = Category('Bebida' * 100, 'Importada')
-    except Exception as e:
-        assert isinstance(e, ValueError)       
+    with pytest.raises(ValueError):
+        categories = Category("Large name example." * 100, "Description")
+
         
 def test_name_type():
-    try:
-        c = Category(100, 'Importada')
-    except Exception as e:
-        assert isinstance(e, TypeError)                         
+    with pytest.raises(TypeError):
+        categories = Category(100, "Description")      
+
         
 def test_description_type():
-    try:
-        c = Category('Bebida', 10.6)
-    except Exception as e:
-        assert isinstance(e, TypeError)           
+    with pytest.raises(TypeError):
+        categories = Category("Name", 10)     
+
         
 def test_description_len():
-    try:
-        c = Category('Bebida', 'Importada' * 255)
-    except Exception as e:
-        assert isinstance(e, ValueError)          
+    with pytest.raises(ValueError):
+        categories = Category("Large name example.", "Description" * 500)          
