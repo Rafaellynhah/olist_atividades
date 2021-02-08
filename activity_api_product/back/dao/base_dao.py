@@ -1,9 +1,11 @@
 from back.dao.session import Session
 from back.model.base_model import BaseModel
 
+
 class BaseDao:
     def __init__(self, type_model) -> None:
         self.__type_model = type_model
+    
     
     def save(self, model: BaseModel) -> None:
         with Session() as s:
@@ -27,8 +29,8 @@ class BaseDao:
         else:
             raise TypeError('Id must be integer')
 
+
     def delete(self, model: BaseModel) -> None:
         with Session() as s:
             s.delete(model)
             s.commit()
-            

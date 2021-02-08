@@ -8,8 +8,8 @@ from back.controller.product_controller import ProductController
 app = Flask(__name__)
 api = Api(app)
 
-api.add_resource(ProductController, '/api/product', endpoint = 'product')
-api.add_resource(ProductController, '/api/product/<int:id>', endpoint = 'product_d')
+api.add_resource(ProductController, '/api/product', endpoint = 'products')
+api.add_resource(ProductController, '/api/product/<int:id>', endpoint = 'product')
 
 @app.route('/')
 def index():
