@@ -1,0 +1,39 @@
+{% extends 'template.html' %}
+{% block body %}
+
+<h1>List Categories</h1>
+
+<head>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</head>
+
+<div class="container">
+<div id="back" class="float-right"><a href="{{url_for('index')}}"><button type='button' value=''>Back</button></a></div>
+<div id="back" class="float-right"><a href="/category/create"><button type='button' value=''>Add</button></a></div>
+<table class="table">
+    <thead class="thead-dark">
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+    {% for c in list%}
+      <tr>
+        <td>{{c.name}}</td>
+        <td>{{c.description}}</td>
+        <td>
+          <a href="/category/delete/{{ c.id }}">Delete</a>
+          <a href="/category/update/{{ c.id }}">Update</a>
+        </td>
+      </tr>
+      {% endfor%}
+    </tbody>
+  </table>
+</div>
+
+{% endblock %}

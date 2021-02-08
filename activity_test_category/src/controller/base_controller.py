@@ -10,7 +10,7 @@ class BaseController:
 
 
     def save(self, obj: BaseModel) -> None:
-        self.__dao.save(obj)
+        self.__dao.save(obj) 
 
 
     def read_by_id(self, id: int) -> BaseModel:
@@ -27,3 +27,4 @@ class BaseController:
 
     def delete(self, obj: BaseModel) -> None:
         self.__dao.delete(obj)
+
