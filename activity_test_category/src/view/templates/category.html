@@ -1,0 +1,26 @@
+{% extends 'template.html' %}
+{% block title %}Register Category{% endblock %}
+{% block body %}
+{% if action == 'create' %}
+<div id="category">
+    <form action='/category/create' method="post" > 
+    {% set id = '' %}
+    {% set name = '' %}
+    {% set description = ''  %}
+{% endif %}
+{% if action == 'update' %}
+<div id="category">
+<form action='/category/update' method="post">
+    {% set id = category.id %}
+    {% set name = category.name %}
+    {% set description = category.description  %}
+{% endif %}
+        <input type="text" name="id" id="id" value="{{id}}" hidden>
+        <label>Name: </label> <input type='text' name='name' value="{{name}}" required/> <br />
+        <label>Description: </label> <input type='text' name='description' value="{{description}}" required/> <br />
+  
+        <div class="buttons"><button type='submit' value=''>Save</button> <a href="{{url_for('index')}}"><button type='button' value=''>Back</button></a></div>
+    </form>
+</div>
+
+{% endblock %}

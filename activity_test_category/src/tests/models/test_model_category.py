@@ -2,7 +2,7 @@ import pytest
 import sys
 sys.path.append('.')
 
-from src.models.category import Category
+from src.models.category_model import Category
 
 class TestCategoryModel:
     def create_instance(self):

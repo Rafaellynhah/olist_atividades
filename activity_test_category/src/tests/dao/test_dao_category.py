@@ -2,8 +2,8 @@ import pytest
 import sys
 sys.path.append('.')
 
-from src.models.category import Category
-from src.dao.category import CategoryDao
+from src.models.category_model import Category
+from src.dao.category_dao import CategoryDao
 
 class TestCategoryDao:
     @pytest.fixture

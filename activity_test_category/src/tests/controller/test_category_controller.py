@@ -2,8 +2,8 @@ import pytest
 import sys
 sys.path.append('.')
 
-from src.models.category import Category
-from src.controller.category import CategoryController
+from src.models.category_model import Category
+from src.controller.category_controller import CategoryController
 
 
 class TestCategoryController:

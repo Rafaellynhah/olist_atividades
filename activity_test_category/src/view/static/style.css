@@ -1,0 +1,111 @@
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    background: #cdcdcd;
+    line-height: 1.6;
+}
+
+h1 {
+    font-family: 'Helvetica', sans-serif;
+    font-weight: 700;
+
+    margin-bottom: 50px;
+    }
+
+
+.buttons{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+.buttons button{
+    margin: 0 2px;
+}
+
+#back button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 100px;
+
+    padding: 8px;
+    margin-bottom: 2px;
+    margin-left: 2px;
+
+    border: None;
+    border-radius: 8px;
+
+    background-color: #364Ef7;
+    color: #fff;
+
+    font-family: 'Helvetica', sans-serif;
+    font-weight: bold;
+    font-size: 0.8rem;
+
+    transition: background-color 400ms;
+    }
+
+#category {
+    display: flex;
+    flex-direction: column;
+
+    background: #e1e1e1;
+
+    padding: 30px;
+
+    border-radius: 8px;
+    }
+  
+#category form label {
+    font-family: 'Helvetica', sans-serif;
+    font-size: 1rem;
+    text-align: left;
+    }
+  
+#category form input {
+    align-items: center;
+    justify-content: center;
+
+    border: None;
+    border-radius: 3px;
+
+    width: 300px;
+
+    padding: 3px;
+    margin: 2px;
+
+    cursor: pointer;
+    }
+
+#category form button {
+
+    align-items: center;
+    justify-content: center;
+
+    width: 200px;
+
+    padding: 8px;
+    margin-top: 15px;
+
+    border: None;
+    border-radius: 8px;
+
+    background-color: #364Ef7;
+    color: #fff;
+
+    font-family: 'Helvetica', sans-serif;
+    font-weight: bold;
+    font-size: 0.8rem;
+
+    transition: background-color 400ms;
+    }
+
+
+#category form button:hover {
+    background-color: #0C29D0;
+    }
